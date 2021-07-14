@@ -6,40 +6,44 @@
       "readings": [
         {
           "id": "02",
-          "code": "Piano Sonata No. 3",
-          "temperature": "Beethoven",
-          "windSpeed": 
+          "code": 800,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1002
         },
         {
           "id": "03",
-          "title": "Piano Sonata No. 7",
-          "artist": "Beethoven"
+          "code": 600,
+          "temperature": 6,
+          "windSpeed": 2,
+          "pressure": 1004
         },
         {
           "id": "04",
-          "title": "Piano Sonata No. 10",
-          "artist": "Beethoven"
+          "code": 700,
+          "temperature": 8,
+          "windSpeed": 1,
+          "pressure": 1005
         }
       ]
     },
     {
       "id": "05",
-      "title": "Beethoven Concertos",
-      "songs": [
+      "name": "Dunmore",
+      "readings": [
         {
           "id": "06",
-          "title": "Piano Concerto No. 0",
-          "artist": "Beethoven"
+          "code": 700,
+          "temperature": 8,
+          "windSpeed": 1,
+          "pressure": 999
         },
         {
           "id": "07",
-          "title": "Piano Concerto No. 4",
-          "artist": "Beethoven"
-        },
-        {
-          "id": "08",
-          "title": "Piano Concerto No. 6",
-          "artist": "Beethoven"
+          "code": 200,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1000
         }
       ]
     }
