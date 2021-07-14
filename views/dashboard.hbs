@@ -6,7 +6,7 @@
       {{title}}
     </h2>
     <h2 class="ui header">{{name}}</h2>
-    <table class="ui table">
+    <table class="ui celled unstackable blue table">
       <thead>
         <tr>
           <th>Code</th>
@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        {{#each reading}}
+        {{#each readings}}
           <tr>
             <td>
               {{code}}
@@ -25,10 +25,10 @@
               {{temperature}}
             </td>
             <td>
-              {{WindSpeed}}
+              {{windSpeed}}
             </td>
             <td>
-              {{Pressure}}
+              {{pressure}}
             </td>
           </tr>
         {{/each}}
