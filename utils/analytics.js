@@ -10,7 +10,7 @@ const analytics = {
       let lastReading = station.readings[station.readings.length - 1];
       let tempFarenheit = conversion.tempF(lastReading.temperature);
       lastReading["tempF"] = tempFarenheit;
-      let beaufort = conversion.beaufort(lastReading.beaufort);
+      let beaufort = conversion.beaufort(lastReading.windSpeed);
       lastReading["beaufort"] = beaufort;
     }
   }
