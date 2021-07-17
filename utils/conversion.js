@@ -4,7 +4,7 @@ const logger = require("../utils/logger");
 const stationCollection = require("../models/station-store.js");
 
 const conversion = {
-  tempF (tempC) {
+  tempF(tempC) {
     return (tempC * 1.8) + 32;
   },
   
