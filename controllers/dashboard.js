@@ -2,6 +2,7 @@
 
 const logger = require("../utils/logger");
 const stationCollection = require("../models/station-store.js");
+const analytics = require("../utils/analytics");
 
 const dashboard = {
   index(request, response) {
