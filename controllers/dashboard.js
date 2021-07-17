@@ -8,15 +8,19 @@ const conversion = require("../utils/conversion.js");
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
+   
     for (let station of stationCollection) {
       if (station.readings.length > 0) {
           let lastReading = station.readings[station.readings.length - 1];
-          const tempF = conversion.tempF(lastReading.temperature);
+          let tempFarenheit = conversion.tempF(lastReading.temperature);
+          console.log(tempFarenheit);
       };
     };
+    
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stationCollection,
+      tempFarenheit: 10
     };
     logger.info("about to render", stationCollection);
     response.render("dashboard", viewData);
