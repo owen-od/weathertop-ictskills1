@@ -10,13 +10,8 @@ const dashboard = {
     logger.info("dashboard rendering");
    
     for (let station of stationCollection) {
-      if (station.readings.length > 0) {
-          let lastReading = station.readings[station.readings.length - 1];
-          let tempFarenheit = conversion.tempF(lastReading.temperature);
-          lastReading ["tempF"] = tempFarenheit;
-          let beaufort
-      };
-    };
+      let latestWeather = analytics.latestWeather(station);
+    }
     
     const viewData = {
       title: "WeatherTop Dashboard",
