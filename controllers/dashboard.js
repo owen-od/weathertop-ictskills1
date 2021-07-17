@@ -13,14 +13,14 @@ const dashboard = {
       if (station.readings.length > 0) {
           let lastReading = station.readings[station.readings.length - 1];
           let tempFarenheit = conversion.tempF(lastReading.temperature);
-          console.log(tempFarenheit);
+          lastReading ["tempF"] = tempFarenheit;
+          let beaufort
       };
     };
     
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stationCollection,
-      tempFarenheit: 10
     };
     logger.info("about to render", stationCollection);
     response.render("dashboard", viewData);
