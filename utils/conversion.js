@@ -37,6 +37,7 @@ const conversion = {
       return 12;
     }
     return -1;
-  }
-  
+  }  
 }
+
+module.exports = conversion;
