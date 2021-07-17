@@ -11,7 +11,8 @@ const dashboard = {
     for (let station of stationCollection) {
       if (station.readings.length > 0) {
           let lastReading = station.readings[station.readings.length - 1];
-          let tempF = conversion.tempF(lastReading.temperature);
+          let tempF = lastReading.temperature * 5;
+          console.log(tempF);
       };
     };
     const viewData = {
@@ -19,7 +20,7 @@ const dashboard = {
       stations: stationCollection,
     };
     logger.info("about to render", stationCollection);
-    response.render("dashboard", viewData);
+    response.render("dashboard", viewData, tempF);
   }
 };
 
