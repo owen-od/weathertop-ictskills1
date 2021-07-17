@@ -10,6 +10,7 @@ const analytics = {
       let lastReading = station.readings.get(station.readings.size() - 1);
       station.tempC = lastReading.temperature;
       station.tempF = conversion.tempF(lastReading.temperature);
+      station.beaufort = conversion.beaufort(lastReading.windspeed);
     }
   }
 }
