@@ -9,9 +9,6 @@ const dashboard = {
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stationCollection,
-      for (let station of stations) {
-        
-      }
     };
     logger.info("about to render", stationCollection);
     response.render("dashboard", viewData);
