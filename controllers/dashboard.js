@@ -7,8 +7,11 @@ const analytics = require("../utils/analytics");
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
-    for (let station in stationCollection) {
-      analytics.updateWeather(station);
+    for (let station of stationCollection) {
+      if (station.readings.length > 0) {
+      let lastReading = station.readings(station.readings.length- 1);
+      station.tempC = lastReading.temperature;
+      }
     }
     const viewData = {
       title: "WeatherTop Dashboard",
