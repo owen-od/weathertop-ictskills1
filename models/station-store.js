@@ -1,5 +1,7 @@
 'use strict';
 
+const _= require('lodash');
+
 const stationStore = {
 
   stationCollection: require('./station-store.json').stationCollection,
@@ -9,18 +11,12 @@ const stationStore = {
   },
 
   getStation(id) {
-    let foundStation = null;
-    for (let station of this.stationCollection) {
-      if (id == station.id) {
-        foundStation = station;
-      }
-    }
-    return foundStation;
+    return _.find(this.stationCollection, { id: id });
   },
   
   removeReading(id, readingId) {
     const station = this.getStation(id);
-    //remove the song
+    _.remove(station.readings, { id: readingId });
   },
 };
 

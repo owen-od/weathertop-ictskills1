@@ -16,7 +16,7 @@ const station = {
   
   deleteReading (request, response) {
     const stationId = request.params.id;
-    const readingId = request.params.id;
+    const readingId = request.params.readingid;
     logger.debug('Deleting reading ${readingId} from station ${stationId}');
     stationStore.removeReading(stationId, readingId);
     response.redirect('/station/' + stationId);
