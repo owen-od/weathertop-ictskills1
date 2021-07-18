@@ -13,6 +13,11 @@ const analytics = {
       const latestWeather = [tempFarenheit, beaufort];
       return latestWeather;
     }
+  },
+  
+  windChill(temp, windspeed) {
+    let windChill =  13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
+    return windChill.toFixed(2);
   }
 };
 

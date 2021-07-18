@@ -19,7 +19,7 @@ const station = {
       var pressure = lastReading.pressure;
       var temperature = lastReading.temperature;
       var code = lastReading.code;
-      var compassDirectio
+      var compassDirection = conversion.degreesToCompass(lastReading.windDirection);
     }
   
     const viewData = {
@@ -30,6 +30,7 @@ const station = {
       pressure: pressure,
       temperature: temperature,
       code: code,
+      compassDirection: compassDirection
     };
     response.render('station', viewData);
   },
