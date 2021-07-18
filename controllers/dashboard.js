@@ -8,12 +8,10 @@ const conversion = require("../utils/conversion.js");
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
-   
-    
     
     const viewData = {
       title: "WeatherTop Dashboard",
-      stations: stationStore,
+      stations: stationStore.getAllStations(),
     };
     logger.info("about to render", stationStore);
     response.render("dashboard", viewData);
