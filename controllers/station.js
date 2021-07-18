@@ -12,19 +12,34 @@ const station = {
     const station = stationStore.getStation(stationId);
     logger.info('Station id =  ' + stationId);
     
-    let lastReading = station.readings[station.readings.length - 1];
+    /*let lastReading = station.readings[station.readings.length - 1];
     let tempFarenheit = conversion.tempF(lastReading.temperature);
     let beaufort = conversion.beaufort(lastReading.windSpeed);
     let pressure = lastReading.pressure;
     let temperature = lastReading.temperature;
+    let code = lastReading.code;*/
+    
+    if (station.readings.length > 0) {
+      var lastReading = station.readings[station.readings.length - 1];
+      var tempFarenheit = conversion.tempF(lastReading.temperature);
+      var beaufort = conversion.beaufort(lastReading.windSpeed);
+      var pressure = lastReading.pressure;
+      var temperature = lastReading.temperature;
+      var code = lastReading.code;
+    }
+    
+    const latestWeather = analytics.latestWeather(station);
+    console.log(latestWeather);
     
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
+      latestWeather: latestWeather,
       tempFarenheit: tempFarenheit,
       beaufort: beaufort,
       pressure: pressure,
       temperature: temperature,
+      code: code,
     };
     response.render('station', viewData);
   },
