@@ -18,6 +18,10 @@ const stationStore = {
     const station = this.getStation(id);
     _.remove(station.readings, { id: readingId });
   },
+  
+  removeStation(id) {
+    _.remove(this.stationCollection, { id: id});
+  },
 };
 
 module.exports = stationStore;

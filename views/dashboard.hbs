@@ -5,6 +5,11 @@
     <h2 class="ui header">
       {{name}}
     </h2>
-    <a href='/station/{{id}}'> View </a>
+    <a href='/station/{{id}}' class="ui icon button">
+      <i class="icon blue folder open"></i> 
+    </a>
+    <a href='/dashboard/deleteplaylist/{{id}}' class='ui icon button'>
+      <i class="icon red trash"></i>
+    </a>
   </section>
 {{/each}}

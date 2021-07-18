@@ -15,6 +15,13 @@ const dashboard = {
     };
     logger.info("about to render", stationStore);
     response.render("dashboard", viewData);
+  },
+  
+  deleteStation(request, response) {
+    const stationId = request.params.id;
+    logger.debug('Deleting station ${stationId}');
+    stationStore.removeStation(stationId);
+    response.redirect('/dashboard')
   }
 };
 
