@@ -37,7 +37,13 @@ const conversion = {
       return 12;
     }
     return -1;
-  },  
+  },
+  
+  degreesToCompass(windDirection) {
+        const direction = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"];
+        let index = parseInt(Math.round((windDirection / 22.5)));
+        return direction[index];
+    }
 };
 
 module.exports = conversion;

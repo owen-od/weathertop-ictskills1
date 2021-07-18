@@ -19,6 +19,7 @@ const station = {
       var pressure = lastReading.pressure;
       var temperature = lastReading.temperature;
       var code = lastReading.code;
+      var compassDirectio
     }
   
     const viewData = {
@@ -50,6 +51,7 @@ const station = {
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
       pressure: request.body.pressure,
+      windDirection: request.body.windDirection,
     };
     logger.debug('New reading = ', newReading);
     stationStore.addReading(stationId, newReading);
