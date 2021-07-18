@@ -11,14 +11,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
     logger.info('Station id =  ' + stationId);
-    
-    /*let lastReading = station.readings[station.readings.length - 1];
-    let tempFarenheit = conversion.tempF(lastReading.temperature);
-    let beaufort = conversion.beaufort(lastReading.windSpeed);
-    let pressure = lastReading.pressure;
-    let temperature = lastReading.temperature;
-    let code = lastReading.code;*/
-    
+   
     if (station.readings.length > 0) {
       var lastReading = station.readings[station.readings.length - 1];
       var tempFarenheit = conversion.tempF(lastReading.temperature);
@@ -27,6 +20,12 @@ const station = {
       var temperature = lastReading.temperature;
       var code = lastReading.code;
     }
+    
+    let sky = 'blue';
+    let reading = 10;
+    
+    
+    const sampleArray = 
     
     const viewData = {
       title: 'Station',
