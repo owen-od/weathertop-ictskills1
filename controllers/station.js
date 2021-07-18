@@ -20,6 +20,7 @@ const station = {
       var temperature = lastReading.temperature;
       var code = lastReading.code;
       var compassDirection = conversion.degreesToCompass(lastReading.windDirection);
+      var windChill = analytics.windChill(lastReading.temperature, lastReading.windSpeed);
     }
   
     const viewData = {
@@ -30,7 +31,8 @@ const station = {
       pressure: pressure,
       temperature: temperature,
       code: code,
-      compassDirection: compassDirection
+      compassDirection: compassDirection,
+      windChill: windChill
     };
     response.render('station', viewData);
   },
