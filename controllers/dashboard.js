@@ -1,6 +1,7 @@
 "use strict"
 
 const logger = require("../utils/logger");
+const uuid = require('uuid');
 const stationStore = require("../models/station-store.js");
 const analytics = require("../utils/analytics");
 const conversion = require("../utils/conversion.js");
@@ -21,7 +22,17 @@ const dashboard = {
     logger.debug('Deleting station ${stationId}');
     stationStore.removeStation(stationId);
     response.redirect('/dashboard');
-  }
+  },
+  
+  addStation(request, response) {
+    const newStation = {
+      id: uuid.v1(),
+      name: request.body.name,
+      readings: [],
+    };
+    stationStore.addStation(newStation);
+    response.redirect("/dashboard");
+  },
 };
 
 module.exports = dashboard;

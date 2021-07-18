@@ -31,7 +31,7 @@ const station = {
       code: request.body.code,
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
-      Pressure: request.body.pressure,
+      pressure: request.body.pressure,
     };
     logger.debug('New reading = ', newReading);
     stationStore.addReading(stationId, newReading);
