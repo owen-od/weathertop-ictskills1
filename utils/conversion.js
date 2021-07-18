@@ -47,7 +47,7 @@ const conversion = {
     return direction[index];
     },
     
-  fillWeatherConditions() {
+  /*fillWeatherConditions() {
     weatherConditions.set(100, "Clear");
     weatherConditions.set(200, "Partial Clouds");
     weatherConditions.set(300, "Cloudy");
@@ -62,7 +62,7 @@ const conversion = {
     fillWeatherConditions();
     let weather = weatherConditions.get(weatherCode);
     return weather;
-    },
+    },*/
   
 };
 
