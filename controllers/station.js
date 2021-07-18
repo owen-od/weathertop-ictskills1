@@ -20,13 +20,7 @@ const station = {
       var temperature = lastReading.temperature;
       var code = lastReading.code;
     }
-    
-    let sky = 'blue';
-    let reading = 10;
-    
-    
-    const sampleArray = 
-    
+  
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
