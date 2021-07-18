@@ -28,13 +28,9 @@ const station = {
       var code = lastReading.code;
     }
     
-    const latestWeather = analytics.latestWeather(station);
-    console.log(latestWeather);
-    
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
-      latestWeather: latestWeather,
       tempFarenheit: tempFarenheit,
       beaufort: beaufort,
       pressure: pressure,
