@@ -3,14 +3,20 @@
 const logger = require('../utils/logger');
 const stationStore = require("../models/station-store.js");
 const uuid = require('uuid');
+const analytics = require("../utils/analytics");
 
 const station = {
   index (request, response) {
     const stationId = request.params.id;
+    const station = stationStore.getStation(stationId);
     logger.info('Station id =  ' + stationId);
+    
+    const latestWeather = analytics.latestWeather(station);
+    
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
+      latestWeather: latestWeather,
     };
     response.render('station', viewData);
   },
