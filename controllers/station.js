@@ -4,6 +4,7 @@ const logger = require('../utils/logger');
 const stationStore = require("../models/station-store.js");
 const uuid = require('uuid');
 const analytics = require("../utils/analytics");
+const conversion = require("../utils/conversion");
 
 const station = {
   index (request, response) {
@@ -11,12 +12,19 @@ const station = {
     const station = stationStore.getStation(stationId);
     logger.info('Station id =  ' + stationId);
     
-    const latestWeather = analytics.latestWeather(station);
+    let lastReading = station.readings[station.readings.length - 1];
+    let tempFarenheit = conversion.tempF(lastReading.temperature);
+    let beaufort = conversion.beaufort(lastReading.windSpeed);
+    let pressure = lastReading.pressure;
+    let temperature = lastReading.temperature;
     
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
-      latestWeather: latestWeather,
+      tempFarenheit: tempFarenheit,
+      beaufort: beaufort,
+      pressure: pressure,
+      temperature: temperature,
     };
     response.render('station', viewData);
   },

@@ -10,6 +10,8 @@ const analytics = {
       let lastReading = station.readings[station.readings.length - 1];
       let tempFarenheit = conversion.tempF(lastReading.temperature);
       let beaufort = conversion.beaufort(lastReading.windSpeed);
+      const latestWeather = [tempFarenheit, beaufort];
+      return latestWeather;
     }
   }
 };
