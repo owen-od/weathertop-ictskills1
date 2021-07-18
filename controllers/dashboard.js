@@ -8,7 +8,6 @@ const conversion = require("../utils/conversion.js");
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
-    
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stationStore.getAllStations(),
@@ -21,7 +20,7 @@ const dashboard = {
     const stationId = request.params.id;
     logger.debug('Deleting station ${stationId}');
     stationStore.removeStation(stationId);
-    response.redirect('/dashboard')
+    response.redirect('/dashboard');
   }
 };
 
