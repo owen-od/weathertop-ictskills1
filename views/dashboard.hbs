@@ -3,36 +3,8 @@
 {{#each stations}}
   <section class="ui segment">
     <h2 class="ui header">
-      {{title}}
+      {{name}}
     </h2>
-    <h2 class="ui header">{{name}}</h2>
-    <table class="ui celled unstackable blue table">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Temperature</th>
-          <th>WindSpeed</th>
-          <th>Pressure</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each readings}}
-          <tr>
-            <td>
-              {{code}}
-            </td>
-            <td>
-              {{temperature}}
-            </td>
-            <td>
-              {{windSpeed}}
-            </td>
-            <td>
-              {{pressure}}
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <a href='/station/{{id}}'> View </a>
   </section>
 {{/each}}

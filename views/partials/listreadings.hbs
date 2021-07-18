@@ -1,0 +1,29 @@
+
+<table class="ui celled unstackable blue table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Temperature</th>
+      <th>WindSpeed</th>
+      <th>Pressure</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each readings}}
+      <tr>
+        <td>
+          {{code}}
+        </td>
+        <td>
+          {{temperature}}
+        </td>
+        <td>
+          {{windSpeed}}
+        </td>
+        <td>
+          {{pressure}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
