@@ -13,6 +13,14 @@ const station = {
     };
     response.render('station', viewData);
   },
+  
+  deleteReading (request, response) {
+    const stationId = request.params.id;
+    const readingId = request.params.id;
+    logger.debug('Deleting reading ${readingId} from station ${stationId}');
+    stationStore.removeReading(stationId, readingId);
+    response.redirect('/station/' + stationId);
+  } 
 };
 
 module.exports = station;

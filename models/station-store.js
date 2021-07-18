@@ -15,8 +15,12 @@ const stationStore = {
         foundStation = station;
       }
     }
-
     return foundStation;
+  },
+  
+  removeReading(id, readingId) {
+    const station = this.getStation(id);
+    //remove the song
   },
 };
 
