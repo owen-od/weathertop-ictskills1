@@ -3,7 +3,18 @@
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store.js");
 
-const weatherConditions = new Map();
+/*const weatherConditions = new Map();*/
+
+const weatherConditions = {
+     100: "Clear",
+     200: "Partial Clouds",
+     300: "Cloudy",
+     400: "Light Showers",
+     500: "Heavy Showers",
+     600: "Rain",
+     700: "Snow",
+     800: "Thunder",
+  };
 
 const conversion = {
    tempF(tempC) {
@@ -45,6 +56,13 @@ const conversion = {
     const direction = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"];
     let index = parseInt(Math.round((windDirection / 22.5)));
     return direction[index];
+    },
+  
+  
+  
+  codeToWeatherConditions(weatherCode) {
+    let weather = weatherConditions.get(weatherCode);
+    return weather;
     },
     
   /*fillWeatherConditions() {
