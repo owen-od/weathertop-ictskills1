@@ -27,6 +27,12 @@ const station = {
         lastReading.windSpeed
       );
       var conditions = conversion.codeToWeatherConditions(lastReading.code);
+      var minWindSpeed = analytics.minWindSpeed(station.readings);
+      var maxWindSpeed = analytics.maxWindSpeed(station.readings);
+      var minTemp = analytics.minTemp(station.readings);
+      var maxTemp = analytics.maxTemp(station.readings);
+      var minPressure = analytics.minPressure(station.readings);
+      var maxPressure = analytics.maxPressure(station.readings);
     }
 
     const viewData = {
@@ -39,7 +45,13 @@ const station = {
       code: code,
       compassDirection: compassDirection,
       windChill: windChill,
-      conditions: conditions
+      conditions: conditions,
+      minWindSpeed: minWindSpeed,
+      maxWindSpeed: maxWindSpeed,
+      minTemp: minTemp,
+      maxTemp: maxTemp,
+      minPressure: minPressure,
+      maxPressure: maxPressure
     };
     response.render("station", viewData);
   },
