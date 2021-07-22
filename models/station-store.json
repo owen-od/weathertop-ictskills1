@@ -3,6 +3,8 @@
     {
       "id": "01",
       "name": "Tramore",
+      "latitude": 52.16,
+      "longitude": -7.152,
       "readings": [
         {
           "id": "02",
@@ -41,6 +43,8 @@
     {
       "id": "05",
       "name": "Dunmore",
+      "latitude": "52.149",
+      "longitude": "-6.994",
       "readings": [
         {
           "id": "06",
