@@ -1,5 +1,5 @@
 {
-  "name": "WeatherTop-1",
+  "name": "weathertop-ictskills1",
   "version": "0.0.1",
   "description": "WeatherTop 1 Features",
   "main": "server.js",
@@ -18,9 +18,7 @@
     "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },
-  "repository": {
-    "url": "https://github.com/wit-hdip-comp-sci-2021/playlist-1"
-  },
+  "repository": {},
   "license": "MIT",
   "keywords": [
     "node",
