@@ -33,6 +33,7 @@ const station = {
       var maxTemp = analytics.maxTemp(station.readings);
       var minPressure = analytics.minPressure(station.readings);
       var maxPressure = analytics.maxPressure(station.readings);
+      var weatherIcon = conversion.codeToIcon(lastReading.code);
     }
 
     const viewData = {
@@ -51,7 +52,8 @@ const station = {
       minTemp: minTemp,
       maxTemp: maxTemp,
       minPressure: minPressure,
-      maxPressure: maxPressure
+      maxPressure: maxPressure,
+      weatherIcon: weatherIcon
     };
     response.render("station", viewData);
   },

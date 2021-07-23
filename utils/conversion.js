@@ -14,6 +14,17 @@ const weatherConditions = new Map([
   [800, "Thunder"]
 ]);
 
+const weatherIcons = new Map([
+  [100, "yellow sun"],
+  [200, "yellow cloud sun"],
+  [300, "grey cloud"],
+  [400, "grey cloud sun rain"],
+  [500, "grey cloud showers heavy"],
+  [600, "blue cloud rain"],
+  [700, "blue snowflake"],
+  [800, "yellow bolt"]
+]);
+
 const conversion = {
   tempF(tempC) {
     return tempC * 1.8 + 32;
@@ -77,6 +88,11 @@ const conversion = {
   codeToWeatherConditions(weatherCode) {
     let weather = weatherConditions.get(weatherCode);
     return weather;
+  },
+
+  codeToIcon(weatherCode) {
+    let icon = weatherIcons.get(weatherCode);
+    return icon;
   }
 };
 
