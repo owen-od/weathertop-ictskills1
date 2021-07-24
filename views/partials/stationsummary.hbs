@@ -21,7 +21,10 @@
             <div class="description"> {{temperature}} C</div>
             <div class="description"> {{tempFarenheit}} F</div>
             <div class="description">Max: {{maxTemp}} C</div>
-            <div class="description">Min: {{minTemp}} C</div>
+            <div class="description">
+              Min: {{minTemp}} C
+              <i class="right floated big blue {{tempTrend}} icon"></i>
+            </div>
         </div>
     </div>
     <div class="card">
@@ -31,7 +34,10 @@
             <div class="description">{{beaufort}} beaufort</div>
             <div class="description">{{compassDirection}}</div>
             <div class="description">Feels like: </div>
-            <div class="description">{{windChill}} C</div>
+            <div class="description">
+              {{windChill}} C
+              <i class="right floated big green {{windTrend}} icon"></i>
+            </div>
           <div class="description">Max: {{maxWindSpeed}} km/h </div>
           <div class="description">Min: {{minWindSpeed}} km/h </div>
         </div>
@@ -43,6 +49,7 @@
           <div class="description"> {{pressure}} hpa </div>
           <div class="description">Max: {{maxPressure}} hpa</div>
           <div class="description">Min: {{minPressure}} hpa</div>
+          <i class="right floated big red {{pressureTrend}} icon"></i>
         </div>
     </div>
 </div>
