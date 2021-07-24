@@ -1,13 +1,14 @@
 {
   "stationCollection": [
     {
-      "id": "01",
+      "id": "0c1e6760-ec75-11eb-ab72-af455e89253c",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Tramore",
       "latitude": 52.16,
       "longitude": -7.152,
       "readings": [
         {
-          "id": "02",
+          "id": "1ab60f80-ec75-11eb-ab72-af455e89253c",
           "code": 800,
           "temperature": 0.5,
           "windSpeed": 3.5,
@@ -15,7 +16,7 @@
           "windDirection": 90
         },
         {
-          "id": "03",
+          "id": "250d9cf0-ec75-11eb-ab72-af455e89253c",
           "code": 600,
           "temperature": 6,
           "windSpeed": 2,
@@ -23,7 +24,7 @@
           "windDirection": 96
         },
         {
-          "id": "04",
+          "id": "2e763680-ec75-11eb-ab72-af455e89253c",
           "code": 700,
           "temperature": 8,
           "windSpeed": 1,
@@ -33,13 +34,14 @@
       ]
     },
     {
-      "id": "05",
+      "id": "3d81af10-ec75-11eb-ab72-af455e89253c",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Dunmore",
-      "latitude": "52.149",
-      "longitude": "-6.994",
+      "latitude": 52.149,
+      "longitude": -6.994,
       "readings": [
         {
-          "id": "06",
+          "id": "49c46ab0-ec75-11eb-ab72-af455e89253c",
           "code": 700,
           "temperature": 8,
           "windSpeed": 1,
@@ -47,7 +49,7 @@
           "windDirection": 98
         },
         {
-          "id": "07",
+          "id": "63e98830-ec75-11eb-ab72-af455e89253c",
           "code": 200,
           "temperature": 0.5,
           "windSpeed": 3.5,

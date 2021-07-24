@@ -13,6 +13,10 @@ const stationStore = {
     return this.store.findAll(this.collection);
   },
 
+  getUserStations(userid) {
+    return this.store.findBy(this.collection, { userid: userid });
+  },
+
   getStation(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
