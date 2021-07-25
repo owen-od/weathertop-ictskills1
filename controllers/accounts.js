@@ -51,10 +51,44 @@ const accounts = {
     }
   },
 
+  verifyuser(request, response) {
+    const viewData = {
+      title: "Verify your account"
+    };
+    response.render("verifyuser", viewData);
+  },
+
+  details(request, response) {
+    const user = userstore.getUserByEmail(request.body.email);
+    if (user) {
+      const viewData = {
+        title: "Account details",
+        user: user
+      };
+      response.render('accountdetails', viewData)
+    } else {
+      response.redirect("/account")
+    }
+  },
+
+  update(request, response) {
+    const userId = request.params.id;
+    const user = userstore.getUserById(userId);
+    const newUser = {
+      firstName: request.body.firstName,
+      email: request.body.email,
+      lastName: request.body.lastName,
+      password: request.body.password
+    };
+    userstore.updateUser(user, newUser);
+    response.redirect("/login");
+  },
+
   getCurrentUser(request) {
     const userEmail = request.cookies.station;
     return userstore.getUserByEmail(userEmail);
   }
+
 };
 
 module.exports = accounts;
