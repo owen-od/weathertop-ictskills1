@@ -2,6 +2,7 @@
 <table class="ui celled unstackable blue table">
   <thead>
     <tr>
+      <th>Date/Time</th>
       <th>Code</th>
       <th>Temperature</th>
       <th>WindSpeed</th>
@@ -13,6 +14,9 @@
   <tbody>
     {{#each station.readings}}
       <tr>
+        <td>
+          {{moment date format="DD MMMM YYYY HH:mm:ss"}}
+        </td>
         <td>
           {{code}}
         </td>

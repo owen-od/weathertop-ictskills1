@@ -77,6 +77,7 @@ const station = {
     const station = stationStore.getStation(stationId);
     const newReading = {
       id: uuid.v1(),
+      date: new Date(),
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
