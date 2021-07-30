@@ -8,7 +8,7 @@ const accounts = require('./controllers/accounts.js');
 const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
 
-//Accounts
+// Accounts
 router.get('/', accounts.index);
 router.get('/account', accounts.verifyuser);
 router.post('/account/details', accounts.details);
@@ -25,9 +25,10 @@ router.get('/dashboard', dashboard.index);
 router.get('/dashboard/deletestation/:id', dashboard.deleteStation);
 router.post('/dashboard/addstation', dashboard.addStation);
 
-//stations
+// Stations
 router.get('/station/:id', station.index);
 router.get('/station/:id/deletereading/:readingid', station.deleteReading);
 router.post('/station/:id/addreading', station.addReading);
+router.post('/station/:id/generateReading', station.generateReading);
 
 module.exports = router;

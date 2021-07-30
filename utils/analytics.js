@@ -20,7 +20,10 @@ const analytics = {
         lastReading.temperature,
         lastReading.windSpeed
       );
-      const conditions = conversion.codeToWeatherConditions(lastReading.code);
+      let conditions = conversion.codeToWeatherConditions(lastReading.code);
+      if (!conditions) {
+        conditions = lastReading.conditions;
+      }
       const minWindSpeed = analytics.minWindSpeed(station.readings);
       const maxWindSpeed = analytics.maxWindSpeed(station.readings);
       const minTemp = analytics.minTemp(station.readings);
