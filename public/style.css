@@ -46,3 +46,12 @@ body {
     margin: 2% 0 2% 0;
     border-radius: 10px;
 }
+
+.menu-header {
+    font-size: 150%;
+    font-family: 'Lobster', cursive;
+}
+
+.title {
+    display: block;
+}
