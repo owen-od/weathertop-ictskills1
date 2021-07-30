@@ -14,3 +14,35 @@ body {
 #mission-segment {
     padding: 5%;
 }
+
+#landing {
+    height: 30vh;
+    width: 100%;
+    background-image: url("images/thunder.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0;
+}
+
+#site-header {
+    font-size: 400%;
+    margin-top: 7%;
+    margin-bottom: 0;
+    padding-top: 0;
+}
+
+#sub-header {
+    font-style: italic;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#reviews{
+    margin: .5%;
+}
+
+#start-alt-header {
+    margin: 2% 0 2% 0;
+    border-radius: 10px;
+}
