@@ -12,11 +12,11 @@ const station = {
     const station = stationStore.getStation(stationId);
     logger.info("Station id =  " + stationId);
     const latestWeather = analytics.latestWeather(station);
+    station.latestWeather = latestWeather;
 
     const viewData = {
       title: "Station",
-      station: stationStore.getStation(stationId),
-      latestWeather: latestWeather
+      station: station
     };
     response.render("station", viewData);
   },

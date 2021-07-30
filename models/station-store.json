@@ -6,6 +6,26 @@
       "name": "Tramore",
       "latitude": 52.16,
       "longitude": -7.152,
+      "latestWeather": {
+        "tempFarenheit": 46.4,
+        "beaufort": 1,
+        "pressure": 1005,
+        "temperature": 8,
+        "code": 700,
+        "compassDirection": "E",
+        "windChill": "9.89",
+        "conditions": "Snow",
+        "minWindSpeed": 1,
+        "maxWindSpeed": 3.5,
+        "minTemp": 0.5,
+        "maxTemp": 8,
+        "minPressure": 1002,
+        "maxPressure": 1005,
+        "weatherIcon": "blue snowflake",
+        "tempTrend": "arrow up",
+        "windTrend": "arrow down",
+        "pressureTrend": "arrow up"
+      },
       "readings": [
         {
           "id": "1ab60f80-ec75-11eb-ab72-af455e89253c",
@@ -42,6 +62,26 @@
       "name": "Dunmore",
       "latitude": 52.149,
       "longitude": -6.994,
+      "latestWeather": {
+        "tempFarenheit": 41,
+        "beaufort": 10,
+        "pressure": 1000,
+        "temperature": 5,
+        "code": 300,
+        "compassDirection": "SSE",
+        "windChill": "-3.39",
+        "conditions": "Cloudy",
+        "minWindSpeed": 1,
+        "maxWindSpeed": 100,
+        "minTemp": 0.5,
+        "maxTemp": 8,
+        "minPressure": 999,
+        "maxPressure": 1000,
+        "weatherIcon": "grey cloud",
+        "tempTrend": "",
+        "windTrend": "arrow up",
+        "pressureTrend": ""
+      },
       "readings": [
         {
           "id": "49c46ab0-ec75-11eb-ab72-af455e89253c",

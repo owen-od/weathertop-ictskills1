@@ -27,38 +27,38 @@ const weatherIcons = new Map([
 
 const conversion = {
   tempF(tempC) {
-    return tempC * 1.8 + 32;
+    let tempF = tempC * 1.8 + 32;
+    return tempF.toFixed(2);
   },
 
-  beaufort(windspeed) {
-    if (windspeed == 0) {
-      return 0;
-    } else if (windspeed >= 1 && windspeed <= 6) {
-      return 1;
-    } else if (windspeed >= 7 && windspeed <= 11) {
-      return 2;
-    } else if (windspeed >= 12 && windspeed <= 19) {
-      return 3;
-    } else if (windspeed >= 20 && windspeed <= 29) {
-      return 4;
-    } else if (windspeed >= 30 && windspeed <= 39) {
-      return 5;
-    } else if (windspeed >= 40 && windspeed <= 50) {
-      return 6;
-    } else if (windspeed >= 51 && windspeed <= 62) {
-      return 7;
-    } else if (windspeed >= 63 && windspeed <= 75) {
-      return 8;
-    } else if (windspeed >= 76 && windspeed <= 87) {
-      return 9;
-    } else if (windspeed >= 88 && windspeed <= 102) {
-      return 10;
-    } else if (windspeed >= 103 && windspeed <= 117) {
-      return 11;
-    } else if (windspeed >= 117) {
-      return 12;
+  beaufort(windSpeed) {
+    let beaufort = 0;
+    if ((windSpeed > 1) && (windSpeed <= 5)) {
+      beaufort = 1;
+    } else if ((windSpeed > 5) && (windSpeed <= 11)) {
+      beaufort = 2;
+    } else if ((windSpeed > 11) && (windSpeed <= 19)) {
+      beaufort = 3;
+    } else if ((windSpeed > 19) && (windSpeed <= 28)) {
+      beaufort = 4;
+    } else if ((windSpeed > 28) && (windSpeed <= 38)) {
+      beaufort = 5;
+    } else if ((windSpeed > 38) && (windSpeed <= 49)) {
+      beaufort = 6;
+    } else if ((windSpeed > 49) && (windSpeed <= 61)) {
+      beaufort = 7;
+    } else if ((windSpeed > 61) && (windSpeed <= 74)) {
+      beaufort = 8;
+    } else if ((windSpeed > 74) && (windSpeed <= 88)) {
+      beaufort = 9;
+    } else if ((windSpeed > 88) && (windSpeed <= 102)) {
+      beaufort = 10;
+    } else if ((windSpeed > 102) && (windSpeed <= 117)) {
+      beaufort = 11;
+    } else if (windSpeed > 117) {
+      beaufort = 12;
     }
-    return -1;
+    return beaufort;
   },
 
   degreesToCompass(windDirection) {
