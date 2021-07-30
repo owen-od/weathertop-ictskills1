@@ -5,6 +5,39 @@ const stationStore = require("../models/station-store.js");
 const conversion = require("./conversion.js");
 
 const analytics = {
+  latestWeather(station) {
+    if (station.readings.length > 0) {
+      const lastReading = station.readings[station.readings.length - 1];
+      const tempFarenheit = conversion.tempF(lastReading.temperature);
+      const beaufort = conversion.beaufort(lastReading.windSpeed);
+      const pressure = lastReading.pressure;
+      const temperature = lastReading.temperature;
+      const code = lastReading.code;
+      const compassDirection = conversion.degreesToCompass(
+        lastReading.windDirection
+      );
+      const windChill = analytics.windChill(
+        lastReading.temperature,
+        lastReading.windSpeed
+      );
+      const conditions = conversion.codeToWeatherConditions(lastReading.code);
+      const minWindSpeed = analytics.minWindSpeed(station.readings);
+      const maxWindSpeed = analytics.maxWindSpeed(station.readings);
+      const minTemp = analytics.minTemp(station.readings);
+      const maxTemp = analytics.maxTemp(station.readings);
+      const minPressure = analytics.minPressure(station.readings);
+      const maxPressure = analytics.maxPressure(station.readings);
+      const weatherIcon = conversion.codeToIcon(lastReading.code);
+      const tempTrend = analytics.tempTrend(station.readings);
+      const windTrend = analytics.windTrend(station.readings);
+      const pressureTrend = analytics.pressureTrend(station.readings);
+      var latestWeather = {tempFarenheit, beaufort, pressure, temperature, code,  compassDirection,
+        windChill, conditions, minWindSpeed, maxWindSpeed, minTemp, maxTemp, minPressure, maxPressure,
+        weatherIcon, tempTrend, windTrend, pressureTrend}
+    }
+    return latestWeather;
+  },
+
   windChill(temp, windspeed) {
     let windChill =  13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
     return windChill.toFixed(2);

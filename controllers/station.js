@@ -11,55 +11,12 @@ const station = {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
     logger.info("Station id =  " + stationId);
-
-    if (station.readings.length > 0) {
-      var lastReading = station.readings[station.readings.length - 1];
-      var tempFarenheit = conversion.tempF(lastReading.temperature);
-      var beaufort = conversion.beaufort(lastReading.windSpeed);
-      var pressure = lastReading.pressure;
-      var temperature = lastReading.temperature;
-      var code = lastReading.code;
-      var compassDirection = conversion.degreesToCompass(
-        lastReading.windDirection
-      );
-      var windChill = analytics.windChill(
-        lastReading.temperature,
-        lastReading.windSpeed
-      );
-      var conditions = conversion.codeToWeatherConditions(lastReading.code);
-      var minWindSpeed = analytics.minWindSpeed(station.readings);
-      var maxWindSpeed = analytics.maxWindSpeed(station.readings);
-      var minTemp = analytics.minTemp(station.readings);
-      var maxTemp = analytics.maxTemp(station.readings);
-      var minPressure = analytics.minPressure(station.readings);
-      var maxPressure = analytics.maxPressure(station.readings);
-      var weatherIcon = conversion.codeToIcon(lastReading.code);
-      var tempTrend = analytics.tempTrend(station.readings);
-      var windTrend = analytics.windTrend(station.readings);
-      var pressureTrend = analytics.pressureTrend(station.readings);
-    }
+    const latestWeather = analytics.latestWeather(station);
 
     const viewData = {
       title: "Station",
       station: stationStore.getStation(stationId),
-      tempFarenheit: tempFarenheit,
-      beaufort: beaufort,
-      pressure: pressure,
-      temperature: temperature,
-      code: code,
-      compassDirection: compassDirection,
-      windChill: windChill,
-      conditions: conditions,
-      minWindSpeed: minWindSpeed,
-      maxWindSpeed: maxWindSpeed,
-      minTemp: minTemp,
-      maxTemp: maxTemp,
-      minPressure: minPressure,
-      maxPressure: maxPressure,
-      weatherIcon: weatherIcon,
-      tempTrend: tempTrend,
-      windTrend: windTrend,
-      pressureTrend: pressureTrend
+      latestWeather: latestWeather
     };
     response.render("station", viewData);
   },

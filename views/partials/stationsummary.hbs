@@ -1,55 +1,55 @@
 <div class="ui five inverted stackable cards">
-    <div class="card">
-        <div class="content">
-            <i class="right floated big teal map marker icon"></i>
-            <div class="header"> {{station.name}} </div>
-            <div class="description"> Latitude: {{station.latitude}} </div>
-            <div class="description"> Longitude: {{station.longitude}} </div>
-        </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated big teal map marker icon"></i>
+      <div class="header"> {{station.name}} </div>
+      <div class="description"> Latitude: {{station.latitude}} </div>
+      <div class="description"> Longitude: {{station.longitude}} </div>
     </div>
-    <div class="card">
-        <div class="content">
-            <i class="right floated big {{weatherIcon}} icon"></i>
-            <div class="header">Weather</div>
-            <div class="description"> {{conditions}} </div>
-        </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated big {{latestWeather.weatherIcon}} icon"></i>
+      <div class="header">Weather</div>
+      <div class="description"> {{latestWeather.conditions}}{{conditions}} </div>
     </div>
-    <div class="card">
-        <div class="content">
-            <i class="right floated big blue temperature low icon"></i>
-            <div class="header">Temperature</div>
-            <div class="description"> {{temperature}} C</div>
-            <div class="description"> {{tempFarenheit}} F</div>
-            <div class="description">Max: {{maxTemp}} C</div>
-            <div class="description">
-              Min: {{minTemp}} C
-              <i class="right floated big blue {{tempTrend}} icon"></i>
-            </div>
-        </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated big blue temperature low icon"></i>
+      <div class="header">Temperature</div>
+      <div class="description"> {{latestWeather.temperature}} C</div>
+      <div class="description"> {{latestWeather.tempFarenheit}} F</div>
+      <div class="description">Max: {{latestWeather.maxTemp}} C</div>
+      <div class="description">
+        Min: {{latestWeather.minTemp}} C
+        <i class="right floated big blue {{latestWeather.tempTrend}} icon"></i>
+      </div>
     </div>
-    <div class="card">
-        <div class="content">
-            <i class="right floated big green wind icon"></i>
-            <div class="header">Wind</div>
-            <div class="description">{{beaufort}} beaufort</div>
-            <div class="description">{{compassDirection}}</div>
-            <div class="description">Feels like: </div>
-            <div class="description">
-              {{windChill}} C
-              <i class="right floated big green {{windTrend}} icon"></i>
-            </div>
-          <div class="description">Max: {{maxWindSpeed}} km/h </div>
-          <div class="description">Min: {{minWindSpeed}} km/h </div>
-        </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated big green wind icon"></i>
+      <div class="header">Wind</div>
+      <div class="description">{{latestWeather.beaufort}} beaufort</div>
+      <div class="description">{{latestWeather.compassDirection}}</div>
+      <div class="description">Feels like: </div>
+      <div class="description">
+        {{latestWeather.windChill}} C
+        <i class="right floated big green {{windTrend}} icon"></i>
+      </div>
+      <div class="description">Max: {{latestWeather.maxWindSpeed}} km/h </div>
+      <div class="description">Min: {{latestWeather.minWindSpeed}} km/h </div>
     </div>
-    <div class="card">
-        <div class="content">
-            <i class="right floated angle large red double up icon"></i>
-            <div class="header">Pressure</div>
-          <div class="description"> {{pressure}} hpa </div>
-          <div class="description">Max: {{maxPressure}} hpa</div>
-          <div class="description">Min: {{minPressure}} hpa</div>
-          <i class="right floated big red {{pressureTrend}} icon"></i>
-        </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <i class="right floated angle large red double up icon"></i>
+      <div class="header">Pressure</div>
+      <div class="description"> {{latestWeather.pressure}} hpa </div>
+      <div class="description">Max: {{latestWeather.maxPressure}} hpa</div>
+      <div class="description">Min: {{latestWeather.minPressure}} hpa</div>
+      <i class="right floated big red {{latestWeather.pressureTrend}} icon"></i>
     </div>
+  </div>
 </div>
