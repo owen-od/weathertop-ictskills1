@@ -11,7 +11,9 @@ const weatherConditions = new Map([
   [500, "Heavy Showers"],
   [600, "Rain"],
   [700, "Snow"],
-  [800, "Thunder"]
+  [800, "Thunder"],
+  [900, "Mist/Fog"],
+  [1000, "Tornado"]
 ]);
 
 const weatherIcons = new Map([
@@ -22,7 +24,9 @@ const weatherIcons = new Map([
   [500, "grey cloud showers heavy"],
   [600, "blue cloud rain"],
   [700, "blue snowflake"],
-  [800, "yellow bolt"]
+  [800, "yellow bolt"],
+  [900, "smog"],
+  [1000, "wind"]
 ]);
 
 const conversion = {
@@ -88,6 +92,28 @@ const conversion = {
   codeToWeatherConditions(weatherCode) {
     let weather = weatherConditions.get(weatherCode);
     return weather;
+  },
+
+  convertAPICode(weatherCode) {
+    let code = 0;
+    if ((weatherCode >= 200) && (weatherCode <= 232)) {
+      code = 800;
+    } else if ((weatherCode >= 300) && (weatherCode <= 321)) {
+      code = 400;
+    } else if ((weatherCode >= 500) && (weatherCode <= 531)) {
+      code = 600;
+    } else if ((weatherCode >= 600) && (weatherCode <= 622)) {
+      code = 700;
+    } else if ((weatherCode > 701) && (weatherCode <= 781)) {
+      code = 900;
+    } else if (weatherCode === 781) {
+      code = 1000;
+    } else if (weatherCode === 800) {
+      code = 100;
+    } else if ((weatherCode >= 801) && (weatherCode <= 804)) {
+      code = 300;
+    }
+    return code;
   },
 
   codeToIcon(weatherCode) {

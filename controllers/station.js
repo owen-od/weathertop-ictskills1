@@ -60,7 +60,7 @@ const station = {
       var newReading = {
         id: uuid.v1(),
         date: new Date(),
-        conditions: reading.weather[0].description,
+        code: conversion.convertAPICode(reading.weather[0].id),
         temperature: reading.temp,
         windSpeed: reading.wind_speed,
         pressure: reading.pressure,
