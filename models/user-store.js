@@ -25,6 +25,10 @@ const userStore = {
     return this.store.findOneBy(this.collection, { email: email });
   },
 
+  checkPassword(user, password) {
+    return user.password === password;
+  },
+
   updateUser (user, updatedUser) {
     if(updatedUser.firstName) {
       user.firstName = updatedUser.firstName;
