@@ -7,23 +7,23 @@
       "latitude": 52.16,
       "longitude": -7.152,
       "latestWeather": {
-        "tempFarenheit": "46.40",
-        "beaufort": 0,
-        "pressure": 1005,
-        "temperature": 8,
-        "code": 700,
-        "compassDirection": "E",
-        "windChill": "9.89",
-        "conditions": "Snow",
+        "tempFarenheit": "66.87",
+        "beaufort": 1,
+        "pressure": 1011,
+        "temperature": 19.37,
+        "code": 300,
+        "compassDirection": "W",
+        "windChill": "21.11",
+        "conditions": "Cloudy",
         "minWindSpeed": 1,
         "maxWindSpeed": 3.5,
         "minTemp": 0.5,
-        "maxTemp": 8,
+        "maxTemp": 19.37,
         "minPressure": 1002,
-        "maxPressure": 1005,
-        "weatherIcon": "blue snowflake",
+        "maxPressure": 1011,
+        "weatherIcon": "grey cloud",
         "tempTrend": "arrow up",
-        "windTrend": "arrow down",
+        "windTrend": "",
         "pressureTrend": "arrow up"
       },
       "readings": [
@@ -53,6 +53,24 @@
           "pressure": 1005,
           "windDirection": 101,
           "date": "2021-06-25T07:20:42.138Z"
+        },
+        {
+          "id": "00d39f80-029e-11ec-bc00-7d9363b06c70",
+          "date": "2021-08-21T16:36:58.360Z",
+          "code": 300,
+          "temperature": 19.37,
+          "windSpeed": 1.79,
+          "pressure": 1011,
+          "windDirection": 262
+        },
+        {
+          "id": "84c10f40-0437-11ec-a06d-63bf3592f3af",
+          "date": "2021-08-23T17:28:23.861Z",
+          "code": 300,
+          "temperature": 19.55,
+          "windSpeed": 0.89,
+          "pressure": 1029,
+          "windDirection": 201
         }
       ]
     },
@@ -63,24 +81,24 @@
       "latitude": 52.149,
       "longitude": -6.994,
       "latestWeather": {
-        "tempFarenheit": "60.60",
+        "tempFarenheit": "66.79",
         "beaufort": 1,
-        "pressure": 1015,
-        "temperature": 15.89,
+        "pressure": 1030,
+        "temperature": 19.33,
         "code": 300,
         "compassDirection": "S",
-        "windChill": "16.64",
+        "windChill": "20.97",
         "conditions": "Cloudy",
         "minWindSpeed": 1,
         "maxWindSpeed": 100,
         "minTemp": 0.5,
-        "maxTemp": 15.89,
+        "maxTemp": 19.33,
         "minPressure": 999,
-        "maxPressure": 1015,
+        "maxPressure": 1030,
         "weatherIcon": "grey cloud",
         "tempTrend": "arrow up",
-        "windTrend": "",
-        "pressureTrend": ""
+        "windTrend": "arrow down",
+        "pressureTrend": "arrow up"
       },
       "readings": [
         {
@@ -109,6 +127,24 @@
           "pressure": 1000,
           "windDirection": 150,
           "date": "2021-01-25T07:20:42.138Z"
+        },
+        {
+          "id": "b0948580-029c-11ec-9d3e-1f6ff4564d6a",
+          "date": "2021-08-21T16:27:34.232Z",
+          "code": 300,
+          "temperature": 19.27,
+          "windSpeed": 6.17,
+          "pressure": 1012,
+          "windDirection": 240
+        },
+        {
+          "id": "793fa7d0-0437-11ec-a06d-63bf3592f3af",
+          "date": "2021-08-23T17:28:04.557Z",
+          "code": 300,
+          "temperature": 19.33,
+          "windSpeed": 2.06,
+          "pressure": 1030,
+          "windDirection": 180
         }
       ]
     }
