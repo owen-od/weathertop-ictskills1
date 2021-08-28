@@ -53,7 +53,7 @@ const station = {
     const station = stationStore.getStation(stationId);
     const lat = request.body.lat;
     const lng = request.body.lng;
-    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=9782ce4340037cde393220f4fe748998`
+    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=9782ce4340037cde393220f4fe748998`;
     const result = await axios.get(requestUrl);
     if (result.status == 200) {
       const reading = result.data.current;
@@ -65,7 +65,7 @@ const station = {
         windSpeed: reading.wind_speed,
         pressure: reading.pressure,
         windDirection: reading.wind_deg
-      }
+      };
     }
     logger.debug("New reading = ", newReading);
     stationStore.addReading(stationId, newReading);

@@ -31,27 +31,29 @@ const analytics = {
       const tempTrend = analytics.tempTrend(station.readings);
       const windTrend = analytics.windTrend(station.readings);
       const pressureTrend = analytics.pressureTrend(station.readings);
-      var latestWeather = {tempFarenheit, beaufort, pressure, temperature, code,  compassDirection,
+      var latestWeather = {
+        tempFarenheit, beaufort, pressure, temperature, code, compassDirection,
         windChill, conditions, minWindSpeed, maxWindSpeed, minTemp, maxTemp, minPressure, maxPressure,
-        weatherIcon, tempTrend, windTrend, pressureTrend}
+        weatherIcon, tempTrend, windTrend, pressureTrend
+      };
     }
     return latestWeather;
   },
 
   windChill(temp, windspeed) {
-    let windChill =  13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
+    let windChill = 13.12 + 0.6215 * temp - 11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
     return windChill.toFixed(2);
   },
 
   minWindSpeed(readings) {
-  let minReading = readings[0];
-  for (const reading of readings) {
-    if (reading.windSpeed < minReading.windSpeed) {
-      minReading = reading;
+    let minReading = readings[0];
+    for (const reading of readings) {
+      if (reading.windSpeed < minReading.windSpeed) {
+        minReading = reading;
+      }
     }
-  }
-  return minReading.windSpeed;
-},
+    return minReading.windSpeed;
+  },
 
   maxWindSpeed(readings) {
     let maxReading = readings[0];
@@ -104,18 +106,18 @@ const analytics = {
   },
 
   tempTrend(readings) {
-  let trend = 0;
-  if (readings.length > 2) {
-    let values = [readings[readings.length-3].temperature, readings[readings.length-2].temperature, readings[readings.length-1].temperature];
-    trend = this.calcTrend(values);
-  }
-  return trend;
-},
+    let trend = 0;
+    if (readings.length > 2) {
+      let values = [readings[readings.length - 3].temperature, readings[readings.length - 2].temperature, readings[readings.length - 1].temperature];
+      trend = this.calcTrend(values);
+    }
+    return trend;
+  },
 
   windTrend(readings) {
     let trend = 0;
     if (readings.length > 2) {
-      let values = [readings[readings.length-3].windSpeed, readings[readings.length-2].windSpeed, readings[readings.length-1].windSpeed];
+      let values = [readings[readings.length - 3].windSpeed, readings[readings.length - 2].windSpeed, readings[readings.length - 1].windSpeed];
       trend = this.calcTrend(values);
     }
     return trend;
@@ -124,7 +126,7 @@ const analytics = {
   pressureTrend(readings) {
     let trend = 0;
     if (readings.length > 2) {
-      let values = [readings[readings.length-3].pressure, readings[readings.length-2].pressure, readings[readings.length-1].pressure];
+      let values = [readings[readings.length - 3].pressure, readings[readings.length - 2].pressure, readings[readings.length - 1].pressure];
       trend = this.calcTrend(values);
     }
     return trend;
@@ -133,9 +135,9 @@ const analytics = {
   calcTrend(values) {
     let trend = "";
     if (values.length > 2) {
-      if ((values[2] > values[1] ) && (values[1] > values[0])) {
+      if ((values[2] > values[1]) && (values[1] > values[0])) {
         trend = "arrow up";
-      } else if (( values[2] < values[1] ) && (values[1] < values[0])) {
+      } else if ((values[2] < values[1]) && (values[1] < values[0])) {
         trend = "arrow down";
       }
     }
