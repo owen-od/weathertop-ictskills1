@@ -1,35 +1,35 @@
-'use strict';
+"use strict";
 
-const userstore = require('../models/user-store');
-const logger = require('../utils/logger');
-const uuid = require('uuid');
+const userstore = require("../models/user-store");
+const logger = require("../utils/logger");
+const uuid = require("uuid");
 
 const accounts = {
 
   index(request, response) {
     const viewData = {
-      title: 'Login or Signup',
+      title: "Login or Signup"
     };
-    response.render('index', viewData);
+    response.render("index", viewData);
   },
 
   login(request, response) {
     const viewData = {
-      title: 'Login to the Service',
+      title: "Login to the Service"
     };
-    response.render('login', viewData);
+    response.render("login", viewData);
   },
 
   logout(request, response) {
-    response.cookie('station', '');
-    response.redirect('/');
+    response.cookie("station", "");
+    response.redirect("/");
   },
 
   signup(request, response) {
     const viewData = {
-      title: 'Login to the Service',
+      title: "Login to the Service"
     };
-    response.render('signup', viewData);
+    response.render("signup", viewData);
   },
 
   register(request, response) {
@@ -37,41 +37,30 @@ const accounts = {
     user.id = uuid.v1();
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
-    response.redirect('/');
+    response.redirect("/");
   },
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     if ((user) && (userstore.checkPassword(user, request.body.password))) {
-      response.cookie('station', user.email);
+      response.cookie("station", user.email);
       logger.info(`logging in ${user.email}`);
-      response.redirect('/dashboard');
+      response.redirect("/dashboard");
     } else {
-      response.redirect('/login');
+      response.redirect("/login");
     }
   },
 
-  verifyuser(request, response) {
+  accountdetails(request, response) {
+    const user = userstore.getUserByEmail(request.cookies.station);
     const viewData = {
-      title: "Verify your account"
+      title: "Account details",
+      user: user
     };
-    response.render("verifyuser", viewData);
+    response.render("accountdetails", viewData);
   },
 
-  details(request, response) {
-    const user = userstore.getUserByEmail(request.body.email);
-    if (user) {
-      const viewData = {
-        title: "Account details",
-        user: user
-      };
-      response.render('accountdetails', viewData)
-    } else {
-      response.redirect("/account")
-    }
-  },
-
-  update(request, response) {
+  updatedetails(request, response) {
     const userId = request.params.id;
     const user = userstore.getUserById(userId);
     const newUser = {

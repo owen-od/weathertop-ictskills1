@@ -10,9 +10,8 @@ const about = require("./controllers/about.js");
 
 // Accounts
 router.get('/', accounts.index);
-router.get('/account', accounts.verifyuser);
-router.post('/account/details', accounts.details);
-router.post('/account/update/:id', accounts.update);
+router.get('/account', accounts.accountdetails);
+router.post('/update/:id', accounts.updatedetails);
 router.get('/login', accounts.login);
 router.get('/signup', accounts.signup);
 router.get('/logout', accounts.logout);

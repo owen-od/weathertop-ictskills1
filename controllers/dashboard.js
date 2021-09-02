@@ -6,7 +6,7 @@ const uuid = require("uuid");
 const stationStore = require("../models/station-store.js");
 const analytics = require("../utils/analytics");
 const conversion = require("../utils/conversion.js");
-const accounts = require ('./accounts.js');
+const accounts = require("./accounts.js");
 
 const dashboard = {
   index(request, response) {
@@ -42,9 +42,9 @@ const dashboard = {
       latitude: Number(request.body.latitude),
       longitude: Number(request.body.longitude),
       latestWeather: {},
-      readings: [],
+      readings: []
     };
-    logger.debug('Creating a new Station', newStation);
+    logger.debug("Creating a new Station", newStation);
     stationStore.addStation(newStation);
     response.redirect("/dashboard");
   }
